@@ -1,0 +1,38 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Fresh Apples",
+      "price": 120,
+      "category": "Fruits",
+      "image": "https://placehold.co/300x200?text=Apples",
+      "stock": 20
+    },
+    {
+      "id": "2",
+      "name": "Fresh Milk",
+      "price": 60,
+      "category": "Dairy",
+      "image": "https://placehold.co/300x200?text=Milk",
+      "stock": 15
+    },
+    {
+      "id": "3",
+      "name": "Basmati Rice",
+      "price": 150,
+      "category": "Grocery",
+      "image": "https://placehold.co/300x200?text=Rice",
+      "stock": 30
+    }
+  ],
+  "users": [
+    {
+      "name": "muhammad naeem c",
+      "email": "nc691771@gmail.com",
+      "password": "654321",
+      "id": "iOGHpuB3Y5s"
+    }
+  ],
+  "orders": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}
