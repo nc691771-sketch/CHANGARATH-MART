@@ -5,7 +5,7 @@
       "name": "Fresh Apples",
       "price": 120,
       "category": "Fruits",
-      "image": "https://placehold.co/300x200?text=Apples",
+      "image": "https://in.pinterest.com/pin/1009158229020262048/",
       "stock": 20
     },
     {
@@ -13,7 +13,7 @@
       "name": "Fresh Milk",
       "price": 60,
       "category": "Dairy",
-      "image": "https://placehold.co/300x200?text=Milk",
+      "image": "https://in.pinterest.com/pin/360499145142529392/",
       "stock": 15
     },
     {
@@ -23,14 +23,54 @@
       "category": "Grocery",
       "image": "https://placehold.co/300x200?text=Rice",
       "stock": 30
+    },
+    {
+      "id": "4",
+      "name": "Fresh Bananas",
+      "price": 50,
+      "category": "Fruits",
+      "image": "https://placehold.co/300x200?text=Bananas",
+      "stock": 40
+    },
+    {
+      "id": "5",
+      "name": "Orange Juice",
+      "price": 90,
+      "category": "Beverages",
+      "image": "https://placehold.co/300x200?text=Juice",
+      "stock": 25
+    },
+    {
+      "id": "6",
+      "name": "fghcvbnm",
+      "price": 90,
+      "category": "Beve",
+      "image": "https://placehold.co/300x200?text=Juice",
+      "stock": 25
+    },
+    {
+      "id": "7",
+      "name": "qtwuw",
+      "price": 90,
+      "category": "rages",
+      "image": "https://placehold.co/300x200?text=Juice",
+      "stock": 25
+    },
+    {
+      "id": "8",
+      "name": "Orange Juice",
+      "price": 90,
+      "category": "Beverages",
+      "image": "https://placehold.co/300x200?text=Juice",
+      "stock": 25
     }
   ],
   "users": [
     {
-      "name": "muhammad naeem c",
+      "name": "muhammad naheem c",
       "email": "nc691771@gmail.com",
       "password": "654321",
-      "id": "iOGHpuB3Y5s"
+      "id": "Eh1-eW7iXXQ"
     }
   ],
   "orders": [],
