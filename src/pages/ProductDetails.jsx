@@ -3,10 +3,9 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-import { ShoppingCart, Heart, ArrowLeft } from "lucide-react";
+import { ShoppingCart, ArrowLeft } from "lucide-react";
 
 import { addToCart } from "../redux/slices/cartSlice";
-import { addToWishlist } from "../redux/slices/wishlistSlice";
 
 function ProductDetails() {
   const { id } = useParams();
@@ -128,18 +127,10 @@ function ProductDetails() {
             <button
               onClick={() => dispatch(addToCart(product))}
               disabled={product.stock <= 0}
-              className="flex items-center justify-center gap-2 rounded-xl bg-green-700 px-6 py-4 font-semibold text-white transition hover:bg-green-800 disabled:cursor-not-allowed disabled:bg-gray-400"
+              className="flex items-center justify-center gap-2 rounded-xl bg-green-700 px-6 py-4 font-semibold text-white transition hover:bg-blue-800 disabled:cursor-not-allowed disabled:bg-gray-400"
             >
               <ShoppingCart size={20} />
               Add to Cart
-            </button>
-
-            <button
-              onClick={() => dispatch(addToWishlist(product))}
-              className="flex items-center justify-center gap-2 rounded-xl border border-gray-300 px-6 py-4 font-semibold text-gray-700 transition hover:border-red-500 hover:text-red-500"
-            >
-              <Heart size={20} />
-              Add to Wishlist
             </button>
 
           </div>

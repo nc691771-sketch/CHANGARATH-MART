@@ -1,15 +1,16 @@
+
 import {
   ShoppingCart,
   UserRound,
-  ChevronDown,
   Menu,
   X,
-  Heart
+  ChevronDown,
 } from "lucide-react";
 
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { logoutUser } from "../../redux/slices/authSlice";
+import { clearCart } from "../../redux/slices/cartSlice";
 import { Link, useLocation } from "react-router-dom";
 
 import logo from "../../assets/logos/logo.png";
@@ -31,14 +32,10 @@ function Navbar() {
     (total, item) => total + item.quantity,
     0
   );
-  const wishlistItems = useSelector(
-  (state) => state.wishlist?.items || []
-);
-
-const wishlistCount = wishlistItems.length;
 
   const handleLogout = () => {
     dispatch(logoutUser());
+    dispatch(clearCart());
   };
 
   const scrollToSection = (sectionId) => {
@@ -52,155 +49,197 @@ const wishlistCount = wishlistItems.length;
   };
 
   return (
-    <nav className="relative z-50 w-full border-b border-white/10 bg-black text-white">
+    <nav className="sticky top-0 z-50 w-full border-b border-yellow-400/10 bg-[#090b09]/95 text-white shadow-xl shadow-black/20 backdrop-blur-xl">
 
-        <div className="flex min-h-[76px] w-full items-center justify-between gap-3 px-3 sm:min-h-[96px] sm:gap-5 sm:px-6 lg:px-8 2xl:px-12">
+      <div className="mx-auto flex min-h-[78px] w-full max-w-[1600px] items-center justify-between gap-3 px-4 sm:min-h-[88px] sm:px-6 lg:px-10">
 
         {/* LOGO */}
         <Link
           to="/"
-          className="flex min-w-0 shrink-0 items-center gap-2 sm:gap-3"
+          className="group flex shrink-0 items-center gap-3"
         >
-          <img
-            src={logo}
-            alt="CHANGARATH MART"
-            className="h-10 w-10 object-contain sm:h-14 sm:w-14"
-          />
+          <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10 transition duration-300 group-hover:ring-yellow-400/50 sm:h-14 sm:w-14">
+            <img
+              src={logo}
+              alt="CHANGARATH MART"
+              className="h-10 w-10 object-contain sm:h-12 sm:w-12"
+            />
+          </div>
 
-          <h1 className="hidden whitespace-nowrap text-lg font-extrabold tracking-wide sm:block 2xl:text-xl">
+          <h1 className="hidden whitespace-nowrap text-lg font-black tracking-wide sm:block lg:text-xl">
             CHANGARATH
             <span className="text-yellow-400"> MART</span>
           </h1>
         </Link>
 
-        {/* NAVIGATION */}
-        <div className="hidden shrink-0 items-center justify-center gap-4 whitespace-nowrap text-base font-bold xl:flex 2xl:gap-6">
+        {/* DESKTOP NAVIGATION */}
+        <div className="hidden items-center justify-center gap-2 whitespace-nowrap text-sm font-semibold xl:flex">
 
           <Link
             to="/"
-            className="rounded-full bg-red-600 px-4 py-2.5"
+            className={`rounded-full px-5 py-3 transition duration-300 ${
+              location.pathname === "/"
+                ? "bg-yellow-400 text-black shadow-lg shadow-yellow-400/10"
+                : "text-white/70 hover:bg-white/5 hover:text-yellow-400"
+            }`}
           >
             Home
           </Link>
 
           <Link
             to="/products"
-            className="transition hover:text-yellow-400"
+            className={`rounded-full px-5 py-3 transition duration-300 ${
+              location.pathname === "/products"
+                ? "bg-yellow-400 text-black"
+                : "text-white/70 hover:bg-white/5 hover:text-yellow-400"
+            }`}
           >
             Products
           </Link>
 
           <button
-            onClick={() => scrollToSection("categories")}
-            className="flex items-center gap-1 transition hover:text-yellow-400"
-          >
-            Categories
-            <ChevronDown size={14} />
-          </button>
-
-          <button
             onClick={() => scrollToSection("offers")}
-            className="transition hover:text-yellow-400"
+            className="rounded-full px-4 py-3 text-white/70 transition duration-300 hover:bg-white/5 hover:text-yellow-400"
           >
             Offers
           </button>
 
           <button
             onClick={() => scrollToSection("about")}
-            className="transition hover:text-yellow-400"
+            className="rounded-full px-4 py-3 text-white/70 transition duration-300 hover:bg-white/5 hover:text-yellow-400"
           >
             About
           </button>
 
           <button
-            onClick={() => scrollToSection("contact")}
-            className="transition hover:text-yellow-400"
+            onClick={() => scrollToSection("gallery")}
+            className="rounded-full px-4 py-3 text-white/70 transition duration-300 hover:bg-white/5 hover:text-yellow-400"
+          >
+            Gallery
+          </button>
+
+          <Link
+            to="/contact"
+            className="rounded-full px-4 py-3 text-white/70 transition duration-300 hover:bg-white/5 hover:text-yellow-400"
           >
             Contact
-          </button>
+          </Link>
 
         </div>
 
-        {/* CART AND LOGIN / LOGOUT */}
-        <div className="flex items-center justify-self-end gap-2 sm:gap-5">
+        {/* RIGHT ACTIONS */}
+        <div className="flex shrink-0 items-center gap-2 sm:gap-4">
 
+          {/* MOBILE MENU BUTTON */}
           <button
             type="button"
-            className="rounded p-2 xl:hidden"
+            className="rounded-xl border border-white/10 p-2.5 text-white transition hover:border-yellow-400/40 hover:text-yellow-400 xl:hidden"
             aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
           >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
 
+          {/* CART */}
           <Link
             to="/cart"
-            className="relative flex items-center gap-2 transition hover:text-yellow-400"
+            className="group relative flex items-center gap-2 rounded-full px-2 py-2.5 text-white/80 transition hover:text-yellow-400 sm:px-3"
           >
-          <ShoppingCart size={22} />
+            <ShoppingCart
+              size={21}
+              className="transition group-hover:scale-110"
+            />
 
-          <span className="hidden xl:block">Cart</span>
+            <span className="hidden text-sm font-semibold xl:block">
+              Cart
+            </span>
 
-          {cartCount > 0 && (
-          <span className="absolute -right-3 -top-3 flex h-5 min-w-5 items-center justify-center rounded-full bg-green-600 px-1 text-xs font-bold text-white">
-          {cartCount}
-          </span>
+            {cartCount > 0 && (
+              <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-yellow-400 px-1 text-[10px] font-black text-black ring-2 ring-[#090b09]">
+                {cartCount}
+              </span>
             )}
           </Link>
 
-          <Link
-           to="/wishlist"
-           className={`relative flex items-center gap-2 transition ${
-             location.pathname === "/wishlist"
-               ? "text-red-500"
-               : "hover:text-red-400"
-           }`}
-          >
-          <Heart
-            size={22}
-            className={location.pathname === "/wishlist" ? "fill-red-500" : ""}
-          />
-
-          <span className="hidden xl:block">Wishlist</span>
-
-          {wishlistCount > 0 && (
-          <span className="absolute -right-3 -top-3 flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1 text-xs font-bold text-white">
-            {wishlistCount}
-          </span>
-         )}
-         </Link>
-
+          {/* LOGIN / LOGOUT */}
           {isLoggedIn ? (
             <button
               onClick={handleLogout}
-              className="flex items-center gap-2 rounded-full border border-red-500 px-3 py-2 text-red-500 transition hover:bg-red-500 hover:text-white sm:px-5 sm:py-3"
+              className="flex items-center gap-2 rounded-full border border-red-500/40 bg-red-500/5 px-3 py-2.5 text-sm font-semibold text-red-400 transition duration-300 hover:bg-red-500 hover:text-white sm:px-5"
             >
               <UserRound size={18} />
-              <span className="hidden sm:inline">Logout</span>
+              <span className="hidden sm:inline">
+                Logout
+              </span>
             </button>
           ) : (
             <Link
               to="/login"
-              className="flex items-center gap-2 rounded-full border border-white/40 px-3 py-2 transition hover:bg-yellow-400 hover:text-black sm:px-5 sm:py-3"
+              className="flex items-center gap-2 rounded-full border border-yellow-400/40 bg-yellow-400/5 px-3 py-2.5 text-sm font-semibold text-yellow-300 transition duration-300 hover:bg-yellow-400 hover:text-black sm:px-5"
             >
               <UserRound size={18} />
-              <span className="hidden sm:inline">Login / Signup</span>
+              <span className="hidden sm:inline">
+                Login / Signup
+              </span>
             </Link>
           )}
 
         </div>
-
       </div>
+
+      {/* MOBILE NAVIGATION */}
       {menuOpen && (
-        <div className="flex flex-col gap-1 border-t border-white/10 bg-black px-6 py-4 text-base font-semibold xl:hidden">
-          <Link onClick={() => setMenuOpen(false)} to="/" className="rounded px-3 py-2 hover:bg-white/10">Home</Link>
-          <Link onClick={() => setMenuOpen(false)} to="/products" className="rounded px-3 py-2 hover:bg-white/10">Products</Link>
-          {[["categories", "Categories"], ["offers", "Offers"], ["about", "About"], ["contact", "Contact"]].map(([id, label]) => (
-            <button key={id} onClick={() => { setMenuOpen(false); scrollToSection(id); }} className="rounded px-3 py-2 text-left hover:bg-white/10">{label}</button>
-          ))}
+        <div className="border-t border-yellow-400/10 bg-[#090b09] px-5 py-5 shadow-2xl xl:hidden">
+
+          <div className="mx-auto flex max-w-[1600px] flex-col gap-2 text-sm font-semibold">
+
+            <Link
+              onClick={() => setMenuOpen(false)}
+              to="/"
+              className="rounded-xl px-4 py-3 text-white/80 transition hover:bg-yellow-400/10 hover:text-yellow-400"
+            >
+              Home
+            </Link>
+
+            <Link
+              onClick={() => setMenuOpen(false)}
+              to="/products"
+              className="rounded-xl px-4 py-3 text-white/80 transition hover:bg-yellow-400/10 hover:text-yellow-400"
+            >
+              Products
+            </Link>
+
+            {[
+              ["offers", "Offers"],
+              ["about", "About"],
+              ["gallery", "Gallery"],
+            ].map(([id, label]) => (
+              <button
+                key={id}
+                onClick={() => {
+                  setMenuOpen(false);
+                  scrollToSection(id);
+                }}
+                className="flex items-center justify-between rounded-xl px-4 py-3 text-left text-white/80 transition hover:bg-yellow-400/10 hover:text-yellow-400"
+              >
+                {label}
+                <ChevronDown size={15} className="-rotate-90" />
+              </button>
+            ))}
+
+            <Link
+              onClick={() => setMenuOpen(false)}
+              to="/contact"
+              className="flex items-center justify-between rounded-xl px-4 py-3 text-white/80 transition hover:bg-yellow-400/10 hover:text-yellow-400"
+            >
+              Contact
+            </Link>
+
+          </div>
         </div>
       )}
+
     </nav>
   );
 }

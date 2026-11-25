@@ -1,19 +1,11 @@
 
 @import "tailwindcss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html,
 body,
 #root {
   width: 100%;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
+  min-height: 100vh;
 }
 
 html {
@@ -21,5 +13,7 @@ html {
 }
 
 body {
+  margin: 0;
+  overflow-y: auto;
   overflow-x: hidden;
 }

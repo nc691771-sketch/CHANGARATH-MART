@@ -1,70 +1,276 @@
 {
-  "products": [
-    {
-      "id": "1",
-      "name": "Fresh Apples",
-      "price": 120,
-      "category": "Fruits",
-      "image": "https://in.pinterest.com/pin/1009158229020262048/",
-      "stock": 20
-    },
-    {
-      "id": "2",
-      "name": "Fresh Milk",
-      "price": 60,
-      "category": "Dairy",
-      "image": "https://in.pinterest.com/pin/360499145142529392/",
-      "stock": 15
-    },
-    {
-      "id": "3",
-      "name": "Basmati Rice",
-      "price": 150,
-      "category": "Grocery",
-      "image": "https://placehold.co/300x200?text=Rice",
-      "stock": 30
-    },
-    {
-      "id": "4",
-      "name": "Fresh Bananas",
-      "price": 50,
-      "category": "Fruits",
-      "image": "https://placehold.co/300x200?text=Bananas",
-      "stock": 40
-    },
-    {
-      "id": "5",
-      "name": "Orange Juice",
-      "price": 90,
-      "category": "Beverages",
-      "image": "https://placehold.co/300x200?text=Juice",
-      "stock": 25
-    },
-    {
-      "id": "6",
-      "name": "fghcvbnm",
-      "price": 90,
-      "category": "Beve",
-      "image": "https://placehold.co/300x200?text=Juice",
-      "stock": 25
-    },
-    {
-      "id": "7",
-      "name": "qtwuw",
-      "price": 90,
-      "category": "rages",
-      "image": "https://placehold.co/300x200?text=Juice",
-      "stock": 25
-    },
-    {
-      "id": "8",
-      "name": "Orange Juice",
-      "price": 90,
-      "category": "Beverages",
-      "image": "https://placehold.co/300x200?text=Juice",
-      "stock": 25
-    }
-  ],
+"products": [
+  {
+    "id": "1",
+    "name": "Fresh Apples",
+    "price": 120,
+    "category": "Fruits",
+    "image": "https://images.pexels.com/photos/7156075/pexels-photo-7156075.jpeg",
+    "stock": 20,
+    "description": "Fresh and juicy apples."
+  },
+  {
+    "id": "2",
+    "name": "Fresh Bananas",
+    "price": 50,
+    "category": "Fruits",
+    "image": "https://i.pinimg.com/1200x/42/d7/2a/42d72a0bf2973fcf5d3bc5f5556e882a.jpg",
+    "stock": 40,
+    "description": "Naturally sweet fresh bananas."
+  },
+  {
+    "id": "3",
+    "name": "Fresh Oranges",
+    "price": 80,
+    "category": "Fruits",
+    "image": "https://i.pinimg.com/736x/d3/ea/b8/d3eab85634aadd2321d1189dab3612ad.jpg",
+    "stock": 25,
+    "description": "Juicy and sweet oranges."
+  },
+  {
+    "id": "4",
+    "name": "Green Grapes",
+    "price": 100,
+    "category": "Fruits",
+    "image": "https://i.pinimg.com/736x/09/8d/eb/098deb96d85b4616fc9f902aa258fbdf.jpg",
+    "stock": 18,
+    "description": "Fresh seedless green grapes."
+  },
+  {
+    "id": "5",
+    "name": "Fresh Mangoes",
+    "price": 150,
+    "category": "Fruits",
+    "image": "https://i.pinimg.com/736x/54/c5/5d/54c55dca43db106cbb0c011f41ae9e57.jpg",
+    "stock": 15,
+    "description": "Sweet and delicious mangoes."
+  },
+  {
+    "id": "6",
+    "name": "Fresh Tomatoes",
+    "price": 40,
+    "category": "Vegetables",
+    "image": "https://i.pinimg.com/1200x/e8/6d/10/e86d10e61c0a316e9abbdc29f1eea1a6.jpg",
+    "stock": 35,
+    "description": "Fresh red tomatoes."
+  },
+  {
+    "id": "7",
+    "name": "Potatoes",
+    "price": 35,
+    "category": "Vegetables",
+    "image": "https://i.pinimg.com/1200x/23/9c/9b/239c9b96515360c12a25c3d0dc664637.jpg",
+    "stock": 50,
+    "description": "Quality fresh potatoes."
+  },
+  {
+    "id": "8",
+    "name": "Fresh Onions",
+    "price": 45,
+    "category": "Vegetables",
+    "image": "https://i.pinimg.com/1200x/37/61/7d/37617d73766f34c8f4a6dd4702fa7517.jpg",
+    "stock": 40,
+    "description": "Fresh onions for daily cooking."
+  },
+  {
+    "id": "9",
+    "name": "Carrots",
+    "price": 60,
+    "category": "Vegetables",
+    "image": "https://i.pinimg.com/736x/6d/bb/ee/6dbbee2a1939501b4dd835c2e7feb7f6.jpg",
+    "stock": 25,
+    "description": "Crunchy fresh carrots."
+  },
+  {
+    "id": "10",
+    "name": "Green Capsicum",
+    "price": 70,
+    "category": "Vegetables",
+    "image": "https://i.pinimg.com/736x/d9/d3/e5/d9d3e5d871500f5582ff83e8ceb154dd.jpg",
+    "stock": 20,
+    "description": "Fresh green capsicum."
+  },
+  {
+    "id": "11",
+    "name": "Fresh Milk",
+    "price": 60,
+    "category": "Dairy",
+    "image": "https://i.pinimg.com/736x/3a/61/5c/3a615c88a9c9296406f908f464f9b407.jpg",
+    "stock": 15,
+    "description": "Fresh milk for daily nutrition."
+  },
+  {
+    "id": "12",
+    "name": "Butter",
+    "price": 55,
+    "category": "Dairy",
+    "image": "https://i.pinimg.com/736x/cf/3e/31/cf3e31e2b33ee17be2f0de509040a0bb.jpg",
+    "stock": 20,
+    "description": "Creamy and delicious butter."
+  },
+  {
+    "id": "13",
+    "name": "Cheese",
+    "price": 120,
+    "category": "Dairy",
+    "image": "https://i.pinimg.com/736x/be/85/0b/be850b312c5d6e948130833c6e329a74.jpg",
+    "stock": 15,
+    "description": "Tasty cheese for sandwiches."
+  },
+  {
+    "id": "14",
+    "name": "Curd",
+    "price": 40,
+    "category": "Dairy",
+    "image": "https://i.pinimg.com/736x/7e/1b/3a/7e1b3a256f929118e6f41a2d7828d213.jpg",
+    "stock": 20,
+    "description": "Fresh and creamy curd."
+  },
+  {
+    "id": "15",
+    "name": "Eggs",
+    "price": 80,
+    "category": "Dairy",
+    "image": "https://i.pinimg.com/736x/50/9d/6c/509d6cb27fc0912d1362eca62c5bdb7f.jpg",
+    "stock": 30,
+    "description": "Fresh farm eggs."
+  },
+  {
+    "id": "16",
+    "name": "Basmati Rice",
+    "price": 150,
+    "category": "Grocery",
+    "image": "https://i.pinimg.com/1200x/7c/f2/99/7cf299fbf0ac0a7210e75f9f7eee96c5.jpg",
+    "stock": 30,
+    "description": "Premium long-grain basmati rice."
+  },
+  {
+    "id": "17",
+    "name": "Wheat Flour",
+    "price": 55,
+    "category": "Grocery",
+    "image": "https://i.pinimg.com/736x/31/79/9a/31799a26b51048e066faca7739c9e124.jpg",
+    "stock": 25,
+    "description": "Quality wheat flour for daily cooking."
+  },
+  {
+    "id": "18",
+    "name": "Sugar",
+    "price": 45,
+    "category": "Grocery",
+    "image": "https://i.pinimg.com/1200x/24/7a/89/247a89fb1b7a340763131072538ee8de.jpg",
+    "stock": 40,
+    "description": "Fine quality white sugar."
+  },
+  {
+    "id": "19",
+    "name": "Cooking Oil",
+    "price": 160,
+    "category": "Grocery",
+    "image": "https://i.pinimg.com/736x/48/3d/94/483d94d55480fa7d26d4e7d680a18223.jpg",
+    "stock": 20,
+    "description": "Everyday cooking oil."
+  },
+  {
+    "id": "20",
+    "name": "Toor Dal",
+    "price": 110,
+    "category": "Grocery",
+    "image": "https://i.pinimg.com/736x/28/e3/57/28e3578b4c8faf14cb51c5d7d353cc0b.jpg",
+    "stock": 25,
+    "description": "Quality toor dal for delicious meals."
+  },
+  {
+    "id": "21",
+    "name": "Orange Juice",
+    "price": 90,
+    "category": "Beverages",
+    "image": "https://i.pinimg.com/736x/a0/ee/4e/a0ee4e638fc18cdab648c48e1f75f5cc.jpg",
+    "stock": 25,
+    "description": "Refreshing orange juice."
+  },
+  {
+    "id": "22",
+    "name": "Apple Juice",
+    "price": 85,
+    "category": "Beverages",
+    "image": "https://i.pinimg.com/736x/d6/c0/23/d6c023a1e02910b6e1b4be1f131fa195.jpg",
+    "stock": 20,
+    "description": "Refreshing apple juice."
+  },
+  {
+    "id": "23",
+    "name": "Mineral Water",
+    "price": 20,
+    "category": "Beverages",
+    "image": "https://i.pinimg.com/736x/6c/c6/cd/6cc6cd67a3931fe742582ccd97575f86.jpg",
+    "stock": 50,
+    "description": "Packaged drinking water."
+  },
+  {
+    "id": "24",
+    "name": "Soft Drink",
+    "price": 40,
+    "category": "Beverages",
+    "image": "https://i.pinimg.com/1200x/a2/80/c5/a280c58cf59207819bfddb2e2ff5f558.jpg",
+    "stock": 30,
+    "description": "Chilled refreshing soft drink."
+  },
+  {
+    "id": "25",
+    "name": "Potato Chips",
+    "price": 20,
+    "category": "Snacks",
+    "image": "https://i.pinimg.com/736x/fa/44/91/fa44918019677182b5dc7fa05b9ba596.jpg",
+    "stock": 35,
+    "description": "Crispy salted potato chips."
+  },
+  {
+    "id": "26",
+    "name": "Chocolate",
+    "price": 100,
+    "category": "Snacks",
+    "image": "https://i.pinimg.com/736x/b3/fc/a9/b3fca93f858910d93673da47dc288cd4.jpg",
+    "stock": 25,
+    "description": "Delicious milk chocolate."
+  },
+  {
+    "id": "27",
+    "name": "Biscuits",
+    "price": 30,
+    "category": "Snacks",
+    "image": "https://i.pinimg.com/736x/a5/f1/54/a5f154be42ed118e17ca03bff93f24da.jpg",
+    "stock": 40,
+    "description": "Crunchy tea-time biscuits."
+  },
+  {
+    "id": "28",
+    "name": "Brown Bread",
+    "price": 45,
+    "category": "Bakery",
+    "image": "https://i.pinimg.com/1200x/81/83/a2/8183a2985bb104b087fdbd738601a3bd.jpg",
+    "stock": 20,
+    "description": "Soft and healthy brown bread."
+  },
+  {
+    "id": "29",
+    "name": "Vanilla Cake",
+    "price": 250,
+    "category": "Bakery",
+    "image": "https://i.pinimg.com/736x/7d/9f/fd/7d9ffd05c5a7c4a9e639de0fd91123c8.jpg",
+    "stock": 10,
+    "description": "Soft and delicious vanilla cake."
+  },
+  {
+    "id": "30",
+    "name": "Toothpaste",
+    "price": 95,
+    "category": "Personal Care",
+    "image": "https://i.pinimg.com/736x/ff/04/79/ff0479ed3c83dbfb63d9ca437186b8a5.jpg",
+    "stock": 20,
+    "description": "Daily oral care toothpaste."
+  }
+],
   "users": [
     {
       "name": "muhammad naheem c",
@@ -73,6 +279,5 @@
       "id": "Eh1-eW7iXXQ"
     }
   ],
-  "orders": [],
-  "$schema": "./node_modules/json-server/schema.json"
+  "orders": []
 }

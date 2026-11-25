@@ -7,12 +7,10 @@ import axios from "axios";
 import {
   ShoppingCart,
   Search,
-  Heart,
   RefreshCw,
 } from "lucide-react";
 
 import { addToCart } from "../redux/slices/cartSlice";
-import { addToWishlist } from "../redux/slices/wishlistSlice";
 
 import {
   setProducts,
@@ -249,7 +247,7 @@ function Products() {
             setSearch("");
             setSelectedCategory("All");
             setSortOrder("default");
-            setCurrentPage(1);
+            setCurrentPage(2);
           }}
           className="text-sm font-semibold text-green-700 hover:text-green-900"
         >
@@ -320,20 +318,10 @@ function Products() {
                   </p>
 
                   {/* PRICE */}
-                  <div className="mt-4 flex items-center justify-between">
+                  <div className="mt-4">
                     <p className="text-xl font-bold text-green-700">
                       ₹{product.price}
                     </p>
-
-                    <button
-                      onClick={() =>
-                        dispatch(addToWishlist(product))
-                      }
-                      title="Add to Wishlist"
-                      className="rounded-full border border-gray-200 p-2 text-gray-500 transition hover:border-red-500 hover:text-red-500"
-                    >
-                      <Heart size={19} />
-                    </button>
                   </div>
 
                   {/* ADD TO CART */}
@@ -342,7 +330,7 @@ function Products() {
                       dispatch(addToCart(product))
                     }
                     disabled={Number(product.stock) <= 0}
-                    className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-green-700 py-3 font-semibold text-white transition hover:bg-green-800 disabled:cursor-not-allowed disabled:bg-gray-400"
+                    className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-blue-700 py-3 font-semibold text-white transition hover:bg-blue-800 disabled:cursor-not-allowed disabled:bg-gray-400"
                   >
                     <ShoppingCart size={19} />
 
